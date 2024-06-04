@@ -24,21 +24,38 @@
 
 ### Задание 1
 
-https://github.com/aazh94/test123/commit/242fccc877a08358574d811b7081d067c87d0fe9
+# wget https://repo.zabbix.com/zabbix/6.0/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.0-6+ubuntu24.04_all.deb
+# dpkg -i zabbix-release_6.0-6+ubuntu24.04_all.deb
+# apt update
 
+# apt install zabbix-server-pgsql zabbix-frontend-php php8.3-pgsql zabbix-apache-conf zabbix-sql-scripts zabbix-agent
+
+# sudo -u postgres createuser --pwprompt zabbix
+# sudo -u postgres createdb -O zabbix zabbix
+
+# zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
+
+# DBPassword=12345
+
+# systemctl restart zabbix-server zabbix-agent apache2
+# systemctl enable zabbix-server zabbix-agent apache2
+
+![Screenshot1_1](./admin.png)
 
 ---
 
 ### Задание 2
 
-https://github.com/aazh94/test123/commit/6ad4e278d45616ed26cffbc40987b0fac47467a3
+# sudo apt install zabbix-agent
+# sudo nano /etc/zabbix/zabbix_agentd.conf
+# sudo systemctl restart zabbix-agent
+# sudo systemctl enable zabbix-agent
+# sudo tail -f /var/log/zabbix/zabbix_agentd.log
+
+![Screenshot2_1](./2agents.png)
+![Screenshot2_2](./Latest.png)
+![Screenshot2_3](./logs.png)
 
 
 ---
-
-### Задание 3
-
-https://github.com/aazh94/test123/network
-
-### Задание 4
 
